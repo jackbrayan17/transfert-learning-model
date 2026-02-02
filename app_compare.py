@@ -56,7 +56,7 @@ def load_best_model():
 if not os.path.exists('best_tuned_model_info.json'):
     st.warning("⚠️ Optimization is still in progress. Please wait for `train_optimized.py` to finish.")
     if st.button("Refresh status"):
-        st.experimental_rerun()
+        st.rerun()
     st.stop()
 
 model, model_info = load_best_model()
@@ -120,3 +120,4 @@ if uploaded_file is not None:
             
             # Bar chart for top k?
             st.bar_chart(predictions[0])
+
